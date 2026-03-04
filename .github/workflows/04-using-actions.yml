@@ -2,11 +2,10 @@ name: 04 - Uso de Actions
 on: push
 jobs:
     job1:
-      name: Mi Job1
+      runs-on: ubuntu-latest
       steps:
       - name: Using the Checkout Action
         uses: actions/checkout@v4
-      steps:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
