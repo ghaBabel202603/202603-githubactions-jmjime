@@ -1,7 +1,7 @@
 name: 04 - Uso de Actions
 on: push
 jobs:
-    job1:
+    build:
       runs-on: ubuntu-latest
       steps:
       - name: Using the Checkout Action
@@ -10,3 +10,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+      - name: 'Node Setup'
+        uses: actions/setup-node@v4
+      - name: 'Install Dependencies'
+        working-directory: ./my-app
+        run: "npm ci"
+      - name: Build
+        working-directory: ./my-app
+        run: "npm run build"
+      - name: Test
+        working-directory: ./my-app
+        run: "npm run test"
