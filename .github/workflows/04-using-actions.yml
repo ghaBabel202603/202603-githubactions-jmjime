@@ -1,4 +1,5 @@
 name: 04 - Uso de Actions
+<<<<<<< HEAD
 on: push
 jobs:
     build:
@@ -21,3 +22,30 @@ jobs:
       - name: Test
         working-directory: ./my-app
         run: "npm run test"
+=======
+on: workflow_dispatch
+jobs:
+  build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: 'Checkout Code'          
+         uses: actions/checkout@v4
+         
+       - name: 'Node Setup'
+         uses: actions/setup-node@v4
+         with:
+           node-version: '24.x'
+
+       - name: 'Install Dependencies'
+         working-directory: ./my-app
+         run: |            
+            npm ci
+
+       - name: 'Run Unit Tests'
+         working-directory: ./my-app
+         run: |            
+            npm run test
+        
+       
+       
+>>>>>>> 00f267feaa738e1d365d59056493802a43c5d881
