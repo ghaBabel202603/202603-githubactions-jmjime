@@ -2,14 +2,19 @@ name: "10 - Functions"
 on:
   pull_request:
   workflow_dispatch:
+    inputs:
+      env_selector:
+        description: "Entorno donde ejecutar el workflow"
+        type: environment
 jobs:
   demo:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.env_selector }}
     steps:
       - name: Bug step
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.title, 'fix')
         run: echo "Bug fix detected"
-        
+
       - name: Failing step
         run: exit 1
 
