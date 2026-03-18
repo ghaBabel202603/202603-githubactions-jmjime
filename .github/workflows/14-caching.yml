@@ -14,7 +14,7 @@ on:
           - "18.x"
           - "20.x"
           - "21.x"
-        default: "20.x"
+        default: "24.x"
 
 jobs:
   build:
