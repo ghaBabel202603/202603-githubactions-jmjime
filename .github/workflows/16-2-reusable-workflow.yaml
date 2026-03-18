@@ -8,7 +8,7 @@ jobs:
     # Reusable workflow en OTRO repo: sustituye OWNER y REPO por tu org/usuario y nombre del repo
     # uses: OWNER/REPO/.github/workflows/16-1-reusable-workflow.yaml@main
     # Ejemplo: uses: mi-org/mi-repo-workflows/.github/workflows/16-1-reusable-workflow.yaml@main
-    uses: jmjime/webCECC/.github/workflows/16-1-reusable-workflow.ym@main
+    uses: jmjime/WebCECC/.github/workflows/16-1-reusable-worklow.yml@main
     with:
       target-directory: "15-artifacts/react-app"
 
